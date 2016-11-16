@@ -6,7 +6,7 @@ Credit:
  - Daniel Boyd - Programmer
  - Stephen O'donnell - Audio
  - Sidney Flavell - Art
- - Matthew Chapman - Design
- - Jake Duthie - Design
- - Craig Metcalfe - Design
+ - Matthew Chapman - Programmer, Design
+ - Jake Duthie - Programmer, Design
+ - Craig Metcalfe - Programmer, Design
  - Aidan Mulvenna - Programmer
