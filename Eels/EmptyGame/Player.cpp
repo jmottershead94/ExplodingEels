@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "Level.h"
 #include <iostream>
-Player::Player(sf::Texture* texture) : GameObject(PLAYER, 64, SCREENHEIGHT - 64, 1.0f, 1.0f, texture) // add playersize vector (sf::vector2i playersize ... ) and use .x .y etc.
+Player::Player(sf::Texture* texture) : GameObject(PLAYER, 64, SCREENHEIGHT * 0.3f, 1.0f, 1.0f, texture) // add playersize vector (sf::vector2i playersize ... ) and use .x .y etc.
 { 
 	gravity = 0.3f;
 	velocity.x = 0.0f;

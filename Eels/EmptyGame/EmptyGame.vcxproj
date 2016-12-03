@@ -82,7 +82,6 @@
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
-    <ClCompile Include="OptionsState.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SplashScreenState.cpp" />
     <ClCompile Include="State.cpp" />
@@ -95,7 +94,6 @@
     <ClInclude Include="InitState.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="MenuState.h" />
-    <ClInclude Include="OptionsState.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SplashScreenState.h" />
     <ClInclude Include="State.h" />

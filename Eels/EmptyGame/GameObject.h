@@ -13,7 +13,6 @@ class GameObject : public Sprite
 		void Animate(float ticks);
 		void Update();
 		sf::IntRect textureRect;
-		sf::FloatRect rect;
 		int numOfFrames, id;
 		bool doneAnimation;
 		float animationFrameDuration, animationTime;

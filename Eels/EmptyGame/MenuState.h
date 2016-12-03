@@ -4,7 +4,6 @@
 // Add in all of the header files for each state that this state interacts with.
 #include "State.h"
 #include "Level.h"
-//#include "OptionsState.h"
 #include "HighScoreState.h"
 
 // InitState IS A state therefore inherits from it.
@@ -22,5 +21,6 @@ class MenuState : public State
 	private:
 		// Attributes.
 		sf::Text levelText, highScoreText, exitText;
+		sf::RectangleShape levelButton, highScoreButton, exitButton;
 };
 

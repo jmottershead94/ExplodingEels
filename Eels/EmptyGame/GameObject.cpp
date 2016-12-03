@@ -8,7 +8,6 @@ GameObject::GameObject(int ID, float x, float y, float width, float height, sf::
 	id = ID;
 	animationFrameDuration = 0.1f;
 	animationTime = 0.0f;
-	rect = getGlobalBounds();
 	doneAnimation = false;
 
 	//Put textures in here
@@ -82,5 +81,4 @@ void GameObject::Animate(float ticks)
 
 void GameObject::Update()
 {
-	rect = getGlobalBounds();
 }

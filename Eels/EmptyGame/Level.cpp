@@ -38,40 +38,45 @@ Level::Level(const State& currentState) : State(currentState)
 	SetText(10.0f, -3.0f, 30, lifeText);
 	SetText(350.0f, -3.0f, 30, scoreText);
 
+	
+
 	//sound setup
 	SetSound(batteryBuffer, "batterysound.flac", 15.0f, batterySound);
 	SetSound(sharkBuffer, "sharksound.flac", 15.0f, sharkSound);
 	SetSound(diverBuffer, "diversound.flac", 15.0f, diverSound);
 
 	//music setup
-	/*gameMusic->openFromFile("game.flac");
-	gameMusic->setVolume(60.0f);
-	gameMusic->setLoop(true);
-	gameMusic->play();*/
+	if (gameMusic->openFromFile("MainGame.flac"))
+	{
+		gameMusic->setVolume(60.0f);
+		gameMusic->setLoop(true);
+		gameMusic->play();
+	}
+	
 
 	//texture setup
 	background.loadFromFile("background.png");
 	//foreground.loadFromFile("foreground.png");
 	//midground.loadFromFile("midground.png");
-	//light.loadFromFile("light.png");
+	light.loadFromFile("rays.png");
 	background.setRepeated(true);
 	//foreground.setRepeated(true);
 	//midground.setRepeated(true);
-	//light.setRepeated(true);
+	light.setRepeated(true);
 
 	//sprite setup
 	backSprite.setTexture(background);
 	//midSprite.setTexture(midground);
 	//foreSprite.setTexture(foreground);
-	//lightSprite.setTexture(light);
+	lightSprite.setTexture(light);
 	backSprite.setPosition(0.0f, 0.0f);
 	//midSprite.setPosition(0.0f, GROUNDHEIGHT - 80.0f);
 	//foreSprite.setPosition(0.0f, GROUNDHEIGHT);
-	//lightSprite.setPosition(0.0f, 0.0f);
+	lightSprite.setPosition(0.0f, 0.0f);
 	backSprite.setTextureRect(sf::IntRect(0, 0, SCREENWIDTH * 200, 720));
 	//midSprite.setTextureRect(sf::IntRect(0, 0, SCREENWIDTH * 50, 80));
 	//foreSprite.setTextureRect(sf::IntRect(0, 0, SCREENWIDTH * 50, 80));
-	//lightSprite.setTextureRect(sf::IntRect(0, 0, SCREENWIDTH * 200, 720));
+	lightSprite.setTextureRect(sf::IntRect(0, 0, SCREENWIDTH * 200, 720));
 
 	srand(static_cast <unsigned>(time(NULL)));
 	scrollX = 4.0f;
@@ -125,14 +130,14 @@ State* Level::HandleInput()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 	{
-		//gameMusic->stop();
+		gameMusic->stop();
 		return new MenuState(*this);
 	}
 	if (player->life == 0.0f)
 	{
 		//use game over method instead
-		//gameMusic->stop();
 		score = player->score;
+		gameMusic->stop();
 		return new HighScoreState(*this);
 	}
 	return NULL;
@@ -363,7 +368,7 @@ void Level::Render()
 
 	//Renders player
 	window->draw(*player);
-	//window->draw(lightSprite);
+	window->draw(lightSprite);
 	//Renders UI elements
 
 	window->draw(red);

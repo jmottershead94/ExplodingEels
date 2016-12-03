@@ -66,7 +66,7 @@ HighScoreState::HighScoreState(const State& currentState) : State(currentState)
 		player.placeText.setString(std::to_string(i + 1));
 		playerScores.push_back(player);
 	}
-
+	menuMusic->play();
 	//std::ifstream getHighScores;
 	//std::string temp;
 	//SetText(500.0f, 300.0f, 50.0f, test);
@@ -114,6 +114,7 @@ State* HighScoreState::HandleInput()
 		// Return any new states here.
 		// This function requires a state to be returned.
 		//newHighScore = false;
+		menuMusic->stop();
 		return new MenuState(*this);
 	}
 

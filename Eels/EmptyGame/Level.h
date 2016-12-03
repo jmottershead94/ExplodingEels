@@ -28,8 +28,8 @@ private:
 	vector<GameObject*> levelObjects;
 	sf::RectangleShape red, green;
 	sf::Text distanceText, lifeText, scoreText;
-	sf::Texture background/*, foreground, midground, light*/;
-	sf::Sprite /*midSprite, foreSprite, */backSprite/*, lightSprite*/;
+	sf::Texture background/*, foreground, midground, */, light;
+	sf::Sprite /*midSprite, foreSprite, */backSprite, lightSprite;
 	sf::Sound batterySound, sharkSound, diverSound;
 	sf::SoundBuffer sharkBuffer, batteryBuffer, diverBuffer;
 	void HandleKeyInput(), randomise(), Randomise(), GenerateObjects(), ResetLevel(), UserInterface(), ResetCounter(), MoveObjects(), ObjectCollisions();
@@ -37,8 +37,5 @@ private:
 	float scrollX, randomiserY, randomiserX, randomiserG;
 	unsigned int maxObjects;
 	int netX, netY, netCounter, netDelay, spawnDelay;;
-	//sf::Music gameMusic;
-
-
 };
 

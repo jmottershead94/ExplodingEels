@@ -23,7 +23,11 @@ InitState::InitState(sf::RenderWindow& gameWindow)
 	{
 		// Error.
 	}
-
+	menuMusic = new sf::Music();
+	menuMusic->openFromFile("MenuMusic.wav");
+	menuMusic->setLoop(true);
+	menuMusic->setVolume(60.0f);
+	gameMusic = new sf::Music();
 }
 
 //////////////////////////////////////////////////////////
